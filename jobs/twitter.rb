@@ -1,9 +1,9 @@
 require 'net/http'
 require 'json'
 
-search_term = URI::encode('#PDX')
+search_term = URI::encode('crowdcompass')
 
-SCHEDULER.every '1s', :first_in => 0 do |job|
+SCHEDULER.every '5m', :first_in => 0 do |job|
   http = Net::HTTP.new('search.twitter.com')
   response = http.request(Net::HTTP::Get.new("/search.json?q=#{search_term}"))
   tweets = JSON.parse(response.body)["results"]

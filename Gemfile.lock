@@ -21,12 +21,15 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     hike (1.2.1)
+    mime-types (1.22)
     multi_json (1.7.2)
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rufus-scheduler (2.0.18)
       tzinfo (>= 0.3.23)
     sass (3.2.7)
@@ -59,3 +62,4 @@ PLATFORMS
 
 DEPENDENCIES
   dashing
+  rest-client
