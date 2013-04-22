@@ -1,13 +1,10 @@
 require "./lib/graphite"
-require 'URI'
+require './lib/data_server_conf'
 
 # last started parkingsessions
 SCHEDULER.every '30s', :first_in => 0 do
   # Create an instance of our helper class
-  q = Graphite.new URI::Generic.build(:scheme => 'http',
-                                      :host   => 'localhost',
-                                      :port   => 9999,
-                                      :path   => '/graphite')
+  q = Graphite.new DataServerConf::GRAPHITE
 
   graphite_test_target = 'graphite.com.crowdcompass.vagrant.graphite.cpu.0.idle'
   
