@@ -9,7 +9,7 @@ SCHEDULER.every '10s', :first_in => 0 do
   graphite_test_target = 'graphite.com.crowdcompass.vagrant.graphite.load.shortterm'
   
   # get the current value
-  # current = q.value(graphite_test_target, '-1min')
+  current = q.value(graphite_test_target, '-1min')
   
   # get points for the last half hour
   points = q.points(graphite_test_target, "-24min")
